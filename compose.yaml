@@ -1,0 +1,11 @@
+services:
+  swagger-ui:
+    build:
+      context: ./docs
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./docs/openapi.yaml:/openapi/openapi.yaml
+    environment:
+      SWAGGER_JSON: /openapi/openapi.yaml
